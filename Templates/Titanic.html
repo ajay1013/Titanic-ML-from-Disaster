@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic</title>
+</head>
+<body style="background: url(https://cdn.wallpapersafari.com/95/72/Ns7jIb.jpg); background-size: 100%;">
+    <div class="login">
+        <br>
+        <h1 style="color: white;" align="center">Titanic Prediction</h1>
+        <br>
+        <h1 style="color: rgb(65, 187, 126);" align="center">About Titanic</h1>
+        <p style="color: rgb(175, 179, 179); font-size: 18px;">RMS Titanic was a British passenger liner operated by the White Star Line that sank in the North Atlantic Ocean on 15 April 1912, after striking an iceberg during her maiden voyage from Southampton to New York City. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making the sinking at the time the deadliest of a single ship in the West and the deadliest peacetime sinking of a superliner or cruise ship to date.</p>
+        <p style="color: rgb(175, 179, 179); font-size: 18px;">RMS Titanic was the largest ship afloat at the time she entered service. Titanic was under the command of Captain Edward Smith, who also went down with the ship. The ocean liner carried some of the wealthiest people in the world, as well as hundreds of emigrants from Great Britain and Ireland, Scandinavia and elsewhere throughout Europe, who were seeking a new life in the United States.</p>
+        <br>
+        <img src="https://images.boredomfiles.com/wp-content/uploads/sites/8/2016/09/10-haunting-titanic-facts.jpg" align="left" height="350" width="450"> </img>
+        <img src="https://qph.fs.quoracdn.net/main-qimg-80754f7a63a5c0c4d1b3d7ae3c0683df" align="right" height="350" width="450">  </img>
+        <br>
+        <!-- Main Input For Receiving Query to our ML -->
+        
+        <form align="center" action="{{ url_for('predict')}}" method="post">
+
+          <input type="text" placeholder="PassengerId" name="PassengerId" required="required" ><br>
+          <br>
+          <input type="text" placeholder="Pclass" name="Pclass" required="required" ><br>
+          <br>
+          <input type="text" placeholder="Name" name="Name" required="required" ><br>
+          <br>
+          <input type="text" placeholder="sex" name="sex" required="required" ><br>
+          <br>
+          <input type="text" placeholder="age" name="age" ><br>
+          <br>
+          <input type="text" placeholder="Number of Siblings/Spouses" name="Number of Siblings/Spouses" required="required" ><br>
+          <br>
+          <input type="text" placeholder="Number of Parents/Children" name="Number of Parents/Children" required="required" ><br>
+          <br>
+          <input type="text" placeholder="Ticket Number" name="Ticket Number" required="required" ><br>
+          <br>
+          <input type="text" placeholder="Passenger Fare" name="Passenger Fare" required="required" ><br>
+          <br>
+          <input type="text" placeholder="Cabin" name="Cabin" ><br>
+          <br>
+          <input type="text" placeholder="Port of Embarkation" name="Port of Embarkation" ><br>
+          <br>
+          <br>
+          <input type="submit" id="Check prediction" value="Check prediction" style="height:50px; width:300px; background-color: rgb(216, 160, 96); font-size: 25px;"><br>
+        </form>
+        <br>
+        <br>
+        <h2 align="center" style="color: yellow;"> {{prediction_text}} </h2>
+      </div>
+</body>
+</html>
